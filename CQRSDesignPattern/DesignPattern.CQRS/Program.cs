@@ -9,6 +9,7 @@ builder.Services.AddScoped<GetProductQueryHandler>();
 builder.Services.AddScoped<CreateProductCommandHandler>();
 builder.Services.AddScoped<GetProductByIDQueryHandler>();
 builder.Services.AddScoped<RemoveProductCommandHandler>();
+builder.Services.AddScoped<GetProductUpdateByIDQueryHandler>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
