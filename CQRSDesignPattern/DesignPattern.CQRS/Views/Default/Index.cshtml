@@ -16,6 +16,7 @@
             <th>Ürün Adı</th>
             <th>Ürün Fiyatı</th>
             <th>Ürün Stoğu</th>
+            <th>Getir</th>
             <th>Sil</th>
             <th>Güncelle</th>
         </tr>
@@ -26,6 +27,7 @@
                 <td>@item.ProductName</td>
                 <td>@item.Price</td>
                 <td>@item.Stock</td>
+                <td><a href="/Default/GetProduct/@item.ID" class="btn btn-dark">Getir</a></td>
                 <td><a href="/Default/DeleteProduct/@item.ID" class="btn btn-warning">Sil</a></td>
                 <td><a href="/Default/UpdateProduct/@item.ID" class="btn btn-success">Güncelle</a></td>
             </tr>

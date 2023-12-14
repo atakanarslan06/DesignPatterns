@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<Context>();
 builder.Services.AddScoped<GetProductQueryHandler>();
 builder.Services.AddScoped<CreateProductCommandHandler>();
+builder.Services.AddScoped<GetProductByIDQueryHandler>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
