@@ -10,12 +10,14 @@ namespace DesignPattern.CQRS.Controllers
         private readonly GetProductQueryHandler _getProductQueryHandler;
         private readonly CreateProductCommandHandler _createProductCommandHandler;
         private readonly GetProductByIDQueryHandler _getProductByIDQueryHandler;
+       private readonly RemoveProductCommandHandler _removeProductCommandHandler;
 
-        public DefaultController(GetProductQueryHandler getProductQueryHandler, CreateProductCommandHandler createProductCommandHandler, GetProductByIDQueryHandler getProductByIDQueryHandler)
+        public DefaultController(GetProductQueryHandler getProductQueryHandler, CreateProductCommandHandler createProductCommandHandler, GetProductByIDQueryHandler getProductByIDQueryHandler,RemoveProductCommandHandler removeProductCommandHandler)
         {
             _getProductQueryHandler = getProductQueryHandler;
             _createProductCommandHandler = createProductCommandHandler;
             _getProductByIDQueryHandler = getProductByIDQueryHandler;
+            _removeProductCommandHandler = removeProductCommandHandler;
         }
 
         public IActionResult Index()
@@ -39,6 +41,11 @@ namespace DesignPattern.CQRS.Controllers
             var values = _getProductByIDQueryHandler.Handle(new
                 GetProductByIdQuery(id));
             return View(values);
+        }
+        public IActionResult DeleteProduct(int id)
+        {
+            _removeProductCommandHandler.Handle(new RemoveProductCommand(id));
+            return RedirectToAction("Index");
         }
     }
 }
