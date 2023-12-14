@@ -5,7 +5,11 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ChainOfResponsibilityDesignPattern", "ChainOfResponsibilityDesignPattern", "{27A8C739-38F7-4F0B-BA8E-D17663F675FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPattern.ChainOfResponsibility", "ChainOfResponsibilityDesignPattern\DesignPattern.ChainOfResponsibility\DesignPattern.ChainOfResponsibility.csproj", "{DAD9A7E9-657C-4D4C-BC1D-9FD9547AD80A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPattern.ChainOfResponsibility", "ChainOfResponsibilityDesignPattern\DesignPattern.ChainOfResponsibility\DesignPattern.ChainOfResponsibility.csproj", "{DAD9A7E9-657C-4D4C-BC1D-9FD9547AD80A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CQRSDesignPattern", "CQRSDesignPattern", "{F315D532-5EA7-4A5B-9839-51D17ED19D3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPattern.CQRS", "CQRSDesignPattern\DesignPattern.CQRS\DesignPattern.CQRS.csproj", "{A2B6057D-9547-430D-A7DA-5DC10B41B264}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +21,17 @@ Global
 		{DAD9A7E9-657C-4D4C-BC1D-9FD9547AD80A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DAD9A7E9-657C-4D4C-BC1D-9FD9547AD80A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DAD9A7E9-657C-4D4C-BC1D-9FD9547AD80A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2B6057D-9547-430D-A7DA-5DC10B41B264}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2B6057D-9547-430D-A7DA-5DC10B41B264}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2B6057D-9547-430D-A7DA-5DC10B41B264}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2B6057D-9547-430D-A7DA-5DC10B41B264}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{DAD9A7E9-657C-4D4C-BC1D-9FD9547AD80A} = {27A8C739-38F7-4F0B-BA8E-D17663F675FA}
+		{A2B6057D-9547-430D-A7DA-5DC10B41B264} = {F315D532-5EA7-4A5B-9839-51D17ED19D3F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C7E80FD0-0859-41F6-9725-E03D4A6058A1}
