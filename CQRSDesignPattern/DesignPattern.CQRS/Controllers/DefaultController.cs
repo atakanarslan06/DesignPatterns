@@ -12,14 +12,16 @@ namespace DesignPattern.CQRS.Controllers
         private readonly GetProductByIDQueryHandler _getProductByIDQueryHandler;
        private readonly RemoveProductCommandHandler _removeProductCommandHandler;
         private readonly  GetProductUpdateByIDQueryHandler _getProductUpdateByIDQueryHandler;
+        private readonly UpdateProductCommandHandler _updateProductCommandHandler;
 
-        public DefaultController(GetProductQueryHandler getProductQueryHandler, CreateProductCommandHandler createProductCommandHandler, GetProductByIDQueryHandler getProductByIDQueryHandler, RemoveProductCommandHandler removeProductCommandHandler, GetProductUpdateByIDQueryHandler getProductUpdateByIDQueryHandler)
+        public DefaultController(GetProductQueryHandler getProductQueryHandler, CreateProductCommandHandler createProductCommandHandler, GetProductByIDQueryHandler getProductByIDQueryHandler, RemoveProductCommandHandler removeProductCommandHandler, GetProductUpdateByIDQueryHandler getProductUpdateByIDQueryHandler, UpdateProductCommandHandler updateProductCommandHandler)
         {
             _getProductQueryHandler = getProductQueryHandler;
             _createProductCommandHandler = createProductCommandHandler;
             _getProductByIDQueryHandler = getProductByIDQueryHandler;
             _removeProductCommandHandler = removeProductCommandHandler;
             _getProductUpdateByIDQueryHandler = getProductUpdateByIDQueryHandler;
+            _updateProductCommandHandler = updateProductCommandHandler;
         }
 
         public IActionResult Index()
@@ -54,6 +56,12 @@ namespace DesignPattern.CQRS.Controllers
         {
             var values = _getProductUpdateByIDQueryHandler.Handle(new GetProductUpdateByIDQuery(id));
             return View(values);
+        }
+        [HttpPost]
+        public IActionResult UpdateProduct(UpdateProductCommand command)
+        {
+            _updateProductCommandHandler.Handle(command);
+            return RedirectToAction("Index");
         }
     }
 }
