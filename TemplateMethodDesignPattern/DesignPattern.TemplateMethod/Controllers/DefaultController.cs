@@ -29,7 +29,7 @@ namespace DesignPattern.TemplateMethod.Controllers
         {
             NetflixPlans netflixPlans = new UltraPlan();
             ViewBag.v1 = netflixPlans.PlanType("Ultra Plan");
-            ViewBag.v2 = netflixPlans.CountPerson(2);
+            ViewBag.v2 = netflixPlans.CountPerson(4);
             ViewBag.v3 = netflixPlans.Price((decimal)109.99);
             ViewBag.v4 = netflixPlans.Content("Film-Dizi-Animasyon-VR");
             ViewBag.v5 = netflixPlans.Resolution("1080px");
