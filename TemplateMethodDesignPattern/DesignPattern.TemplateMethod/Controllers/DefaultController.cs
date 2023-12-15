@@ -15,5 +15,25 @@ namespace DesignPattern.TemplateMethod.Controllers
             ViewBag.v5 = netflixPlans.Resolution("480px");
             return View();
         }
+        public IActionResult StandartPlanIndex()
+        {
+            NetflixPlans netflixPlans = new StandartPlan();
+            ViewBag.v1 = netflixPlans.PlanType("Standart Plan");
+            ViewBag.v2 = netflixPlans.CountPerson(2);
+            ViewBag.v3 = netflixPlans.Price((decimal)94.99);
+            ViewBag.v4 = netflixPlans.Content("Film-Dizi-Animasyon");
+            ViewBag.v5 = netflixPlans.Resolution("720px");
+            return View();
+        }
+        public IActionResult UltraPlanIndex()
+        {
+            NetflixPlans netflixPlans = new UltraPlan();
+            ViewBag.v1 = netflixPlans.PlanType("Ultra Plan");
+            ViewBag.v2 = netflixPlans.CountPerson(2);
+            ViewBag.v3 = netflixPlans.Price((decimal)109.99);
+            ViewBag.v4 = netflixPlans.Content("Film-Dizi-Animasyon-VR");
+            ViewBag.v5 = netflixPlans.Resolution("1080px");
+            return View();
+        }
     }
 }
