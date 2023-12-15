@@ -1,10 +1,19 @@
 using DesignPattern.Observer.DAL;
+using DesignPattern.Observer.ObserverPattern;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<Context>();
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
+builder.Services.AddSingleton<ObserverObject>(sp =>
+{
+    ObserverObject observerObject = new();
+    observerObject.RegisterObserver(new CreateWelcomeMessage(sp));
+    observerObject.RegisterObserver(new CreateMagazineAnnocuncement(sp));
+    observerObject.RegisterObserver(new CreateDiscountCode(sp));
+    return observerObject;
+});
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
