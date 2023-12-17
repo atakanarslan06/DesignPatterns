@@ -19,4 +19,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RepositoryDesignPattern.DataAccesLayer\RepositoryDesignPattern.DataAccesLayer.csproj" />
+    <ProjectReference Include="..\RepositoryDesignPattern.EntityLayer\RepositoryDesignPattern.EntityLayer.csproj" />
+  </ItemGroup>
+
 </Project>
