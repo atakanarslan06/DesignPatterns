@@ -1,8 +1,14 @@
+using RepositoryDesignPattern.BusinessLayer.Abstract;
+using RepositoryDesignPattern.BusinessLayer.Concrete;
+using RepositoryDesignPattern.DataAccesLayer.Abstract;
 using RepositoryDesignPattern.DataAccesLayer.Concrete;
+using RepositoryDesignPattern.DataAccesLayer.EntityFramework;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<ICategoryService, CategoryManager>();
+builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
 builder.Services.AddDbContext<Context>();
 builder.Services.AddControllersWithViews();
 
