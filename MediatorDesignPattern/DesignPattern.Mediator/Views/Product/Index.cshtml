@@ -3,6 +3,7 @@
 @{
     Layout = null;
 }
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 
 <table class="table-bordered">
     <tr>
@@ -24,6 +25,9 @@
             <td>@item.ProductStock</td>
             <td>@item.ProductStockType</td>
             <td>@item.ProductCategory</td>
+            <td><a href="#" class="btn btn-outline-danger-danger">Sil</a></td>
+            <td><a href="#" class="btn btn-outline-danger-success">Güncelle</a></td>
         </tr>
     }
 </table>
+<a href="#" class="btn btn-outline-danger-info">Yeni Ürün Girişi</a>
