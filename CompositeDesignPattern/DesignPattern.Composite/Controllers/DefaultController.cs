@@ -1,6 +1,7 @@
 ﻿using DesignPattern.Composite.CompositePattern;
 using DesignPattern.Composite.DAL;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace DesignPattern.Composite.Controllers
 {
@@ -15,6 +16,9 @@ namespace DesignPattern.Composite.Controllers
 
         public IActionResult Index()
         {
+            var categories = _context.Categories.Include(x => x.Products).ToList();
+            var values = Rekursive(categories, new Category { CategoryName = "FirstCategory", CategoryID = 0 }, new ProductComposite(0, "FirstComposite"));
+            ViewBag.v = values;
             return View();
         }
         public ProductComposite Rekursive(List<Category> categories, Category firstCategory, ProductComposite firstComposite, ProductComposite leaf=null)
