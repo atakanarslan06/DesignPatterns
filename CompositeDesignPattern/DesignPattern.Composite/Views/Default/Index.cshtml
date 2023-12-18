@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = null;
+    var value = ViewBag.v as ProductComposite;
+}
+<a href="~/lib/bootstrap/dist/css/bootstrap.css.map">~/lib/bootstrap/dist/css/bootstrap.css.map</a>
+<a href="~/lib/bootstrap/dist/css/bootstrap.min.css.map">~/lib/bootstrap/dist/css/bootstrap.min.css.map</a>
+<a href="~/lib/bootstrap/dist/css/bootstrap.rtl.css.map">~/lib/bootstrap/dist/css/bootstrap.rtl.css.map</a>
+<a href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map">~/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map</a>
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<div class="container">
+   <br /><br />
+   <div class="row">
+       <div class="col-md4">
+           <div class="card-header">
+               Toplam Ürün Sayısı: @value.TotalCount()
+           </div>
+           <div class="card-body">
+               @foreach (var item in value.Components)
+                {
+                    @Html.Raw(item.Display());
+                }
+           </div>
+       </div>
+   </div>
+</div>

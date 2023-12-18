@@ -13,7 +13,7 @@
 
         public string Display()
         {
-            return $"<li class='list-group-item'>{Name}</li>;
+            return $"<li class='list-group-item'>{Name}</li>";
         }
 
         public int TotalCount()
