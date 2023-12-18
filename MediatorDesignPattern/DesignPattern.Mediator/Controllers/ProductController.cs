@@ -21,7 +21,7 @@ namespace DesignPattern.Mediator.Controllers
         }
         public async Task<IActionResult> GetProduct(int id)
         {
-            var values = await _mediator.Send(new GetProductByIDQuery(id));
+            var values = await _mediator.Send(new GetProductUpdateByIDQuery(id));
             return View(values);
         }
         public async Task<IActionResult> DeleteProduct(int id)

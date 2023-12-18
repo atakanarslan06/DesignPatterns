@@ -6,7 +6,7 @@ using NuGet.Protocol.Plugins;
 
 namespace DesignPattern.Mediator.MediatorPattern.Handlers
 {
-    public class GetProductByIDQueryHandler : IRequestHandler<GetProductByIDQuery, GetProductByIDQueryResult>
+    public class GetProductByIDQueryHandler : IRequestHandler<GetProductUpdateByIDQuery, GetProductByIDQueryResult>
     {
         private readonly Context _context;
 
@@ -15,7 +15,7 @@ namespace DesignPattern.Mediator.MediatorPattern.Handlers
             _context = context;
         }
 
-        public async Task<GetProductByIDQueryResult> Handle(GetProductByIDQuery request, CancellationToken cancellationToken)
+        public async Task<GetProductByIDQueryResult> Handle(GetProductUpdateByIDQuery request, CancellationToken cancellationToken)
         {
             var values = await _context.Products.FindAsync(request.Id);
             return new GetProductByIDQueryResult
