@@ -25,7 +25,7 @@ namespace DesignPattern.Mediator.MediatorPattern.Handlers
                 ProductPrice = x.ProductPrice,
                 ProductStock = x.ProductStock,
                 ProductStockType = x.ProductStockType,
-            }).ToListAsync();
+            }).AsNoTracking().ToListAsync();
         }
     }
 }
