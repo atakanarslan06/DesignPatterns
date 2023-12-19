@@ -16,7 +16,13 @@ namespace DesignPattern.Iterator.Controllers
             visitRouteMover.AddVisitRoute(new VisitorRoute { CountryName = "İtalya", CityName = "Roma", VisitPlaceName = "Kolezyum" });
             visitRouteMover.AddVisitRoute(new VisitorRoute { CountryName = "Çek", CityName = "Prag", VisitPlaceName = "Meydan" });
 
-            var iterat
+            var iterator = visitRouteMover.CreateIterator();
+
+            while (iterator.NextLocation())
+            {
+                strings.Add(iterator.CurrentItem.CountryName + " " + iterator.CurrentItem.CityName + " " + iterator.CurrentItem.VisitPlaceName);
+            }
+            ViewBag.v = strings;
 
             return View();
         }
