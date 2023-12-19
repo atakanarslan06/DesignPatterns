@@ -9,8 +9,8 @@
             visitorRoutes.Add(visitorRoute);
         }
 
+        public int VisitRouteCount { get => visitorRoutes.Count; }
 
-        
         public Iterator<VisitorRoute> CreateIterator()
         {
             
