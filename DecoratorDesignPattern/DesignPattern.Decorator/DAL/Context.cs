@@ -8,6 +8,6 @@ namespace DesignPattern.Decorator.DAL
         {
             optionsBuilder.UseSqlServer("server=ATAKAN\\MYBLOG;initial catalog=DesignPattern10;integrated security=true;");
         }
-       // public DbSet<CustomerProcess> CustomerProcesses { get; set; }
+        public DbSet<Message> Messages { get; set; }
     }
 }
