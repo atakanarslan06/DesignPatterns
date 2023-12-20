@@ -8,7 +8,7 @@ namespace DesignPattern.Decorator.DeceratorPattern
         public void CreateNotify(Notifier notifier)
         {
             context.Notifiers.Add(notifier);
-            context.SaveChanges
+            context.SaveChanges();
         }
     }
 }
