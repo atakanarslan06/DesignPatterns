@@ -4,7 +4,7 @@ namespace DesignPattern.Decorator.DeceratorPattern
 {
     public class Decorator : INotifier
     {
-        Context context;
+        
         private readonly INotifier _notifier;
 
         public Decorator(INotifier notifier)
