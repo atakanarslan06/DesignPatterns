@@ -22,5 +22,10 @@ namespace DesignPattern.Decorator.DeceratorPattern
             context.SaveChanges();
 
         }
+        public override void CreateNotify(Notifier notifier)
+        {
+            base.CreateNotify(notifier);
+            SendMailNotify(notifier);
+        }
     }
 }
